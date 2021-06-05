@@ -3,10 +3,10 @@ package demo;
 public class TryFeatureRecord {
 	
 	public static void main(String[] args) {
-		Company company = new Company("Acme", "California");
-		System.out.println(company.name());
-		System.out.println(company.location());
-		System.out.println(company);
+		
+		tryConstructor();
+		
+		tryAccessors();
 		
 		tryConstructorOverload();
 		
@@ -17,6 +17,18 @@ public class TryFeatureRecord {
 		tryStaticMethod();
 		
 		tryNestedRecord();
+
+	}
+	
+	private static void tryConstructor() {
+		Company company = new Company("Acme", "California");
+		System.out.println(company);
+	}
+	
+	private static void tryAccessors() {
+		Company company = new Company("Acme", "California");
+		System.out.println(company.name());
+		System.out.println(company.location());
 	}
 	
 	private static void tryConstructorOverload() {

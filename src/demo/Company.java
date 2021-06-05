@@ -9,8 +9,10 @@ public record Company(String name, String location) {
 	public enum Sector { ENERGY, HEALTH; }
 
 	static {
-		System.out.println("Company Rocks");
+		System.out.println("Static Initializer : Company Rocks!");
 	}
+	
+	//{ //System.out.println("Intance Initializer : Company Rocks!"); // Instance Initializer is not allowed in a record declaration }
 	
 	//private String sector; //User declared non-static fields sector are not permitted in a record
 	
@@ -22,4 +24,8 @@ public record Company(String name, String location) {
 		return new Company(name, location);
 	}
 	
+	public void mutateName() {
+		//this.name = "Mutated";  // The final field Company.name cannot be assigned
+	}
+
 }
