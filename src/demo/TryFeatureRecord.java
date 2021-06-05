@@ -12,6 +12,8 @@ public class TryFeatureRecord {
 		
 		tryEqualityAndHash();
 		
+		tryInstanceMethod();
+		
 		tryStaticFields();
 		
 		tryStaticMethod();
@@ -43,14 +45,17 @@ public class TryFeatureRecord {
 		System.out.println(company1.hashCode() + " : " + (company1.hashCode() == company2.hashCode()));
 	}
 	
+	private static void tryInstanceMethod() {
+		Company company = new Company("Acme", "California");
+		System.out.println(company.json());
+	}
+	
 	private static void tryStaticFields() {
-		
 		System.out.println(Company.SECTOR_ENERGY);
 		System.out.println(Company.Sector.HEALTH);
 	}
 	
 	private static void tryStaticMethod() {
-		
 		Company company = Company.instance("Acme", "California");
 		System.out.println(company);
 	}
