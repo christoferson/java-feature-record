@@ -21,6 +21,10 @@ public record Company(String name, String location) {
 		if (name == null) {
 			throw new IllegalArgumentException();
 		}
+		if (location == null) {
+			throw new IllegalArgumentException();
+		}
+		name = name + "*";
 	}
 	
 	public Company(String name) { this(name, "???");  }
