@@ -25,6 +25,8 @@ public class TryFeatureRecord {
 		
 		tryCompactCanonicalConstructor();
 		
+		tryCustomCanonicalConstructor();
+		
 		tryConstructor();
 		
 		tryAccessors();
@@ -49,13 +51,17 @@ public class TryFeatureRecord {
 		System.out.println("public Point(int x, int y) { this.x = x; this.y = y; } new Point(35, 26) : " + point);
 	}
 	
-	//
 	private static void tryCompactCanonicalConstructor() {
 		System.out.println("------- TryCompactCanonicalConstructor -----");
 		PointCompact point = new PointCompact(35, 26);
 		System.out.println("public PointCompact { if (x < 0 || y < 0) { ... } } new PointCompact(35, 26) : " + point);
 	}
-	
+	// 
+	private static void tryCustomCanonicalConstructor() {
+		System.out.println("------- TryCustomCanonicalConstructor -----");
+		PointCustom point = new PointCustom(35, 26);
+		System.out.println("public PointCustom { if (x < 0 || y < 0) { ... } } new PointCompact(35, 26) : " + point);
+	}
 	
 	private static void tryConstructor() {
 		System.out.println("------- TryConstructor -----");
