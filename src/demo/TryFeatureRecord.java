@@ -74,6 +74,9 @@ public class TryFeatureRecord {
 		Company company = new Company("Acme", "California");
 		System.out.println(company.name());
 		System.out.println(company.location());
+		PointGetter point = new PointGetter(35, 26);
+		System.out.println("new PointGetter(35, 26) : x=" + point.x());
+		System.out.println("new PointGetter(35, 26) : y=" + point.y());		
 	}
 	
 	private static void tryConstructorOverload() {
