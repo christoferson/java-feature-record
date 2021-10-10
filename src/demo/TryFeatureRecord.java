@@ -42,6 +42,8 @@ public class TryFeatureRecord {
 		tryStaticMethod();
 		
 		tryNestedRecord();
+		
+		// See {@link Class#isRecord()} and {@link Class#getRecordComponents()} for more details.
 
 	}
 	
