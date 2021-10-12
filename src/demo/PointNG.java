@@ -14,4 +14,10 @@ public record PointNG(int x, int y) {
 	public void modify() {
 		//this.x = this.x + 10; // The final field PointNG.x cannot be assigned
 	}
+	
+// A record class cannot explicitly declare instance fields, 
+// Cannot contain instance initializers.R These restrictions ensure that the record header alone defines the state of a record value.	
+
+	// private int z; // User declared non-static fields z are not permitted in a record
+	// { System.out.println(this.x); } // Instance Initializer is not allowed in a record declaration
 }
