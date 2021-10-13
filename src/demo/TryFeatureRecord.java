@@ -43,6 +43,8 @@ public class TryFeatureRecord {
 		
 		tryNestedRecord();
 		
+		tryGeneric();
+		
 		// See {@link Class#isRecord()} and {@link Class#getRecordComponents()} for more details.
 
 	}
@@ -113,6 +115,15 @@ public class TryFeatureRecord {
 		Employee employee = new Employee("John", new Employee.Address("California"));
 		System.out.println(employee);
 		System.out.println(employee.address());
+	}
+	
+	public static void tryGeneric() {
+		
+		PointGeneric<Integer, String> point = new PointGeneric<>(5, "foo");
+		
+		System.out.println(point.x());
+		System.out.println(point.y());
+		System.out.println(point);
 	}
 	
 }
