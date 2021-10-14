@@ -1,5 +1,9 @@
 package demo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 // https://openjdk.java.net/jeps/395
 // Goals
@@ -44,6 +48,8 @@ public class TryFeatureRecord {
 		tryNestedRecord();
 		
 		tryGeneric();
+		
+		tryGenericNestedRecord();
 		
 		// See {@link Class#isRecord()} and {@link Class#getRecordComponents()} for more details.
 
@@ -126,4 +132,22 @@ public class TryFeatureRecord {
 		System.out.println(point);
 	}
 	
+	public static void tryGenericNestedRecord() {
+		
+		List<Table.Row<String>> rows = new ArrayList<>();
+		for (int i = 0; i < 3; i++) {
+			Table.Row<String> row = new Table.Row<>(Arrays.asList("C"+i));
+			rows.add(row);
+		}
+		
+		Table<String> table = new Table<>(rows);
+		rows.add(new Table.Row<String>(Arrays.asList("D1", "D2")));
+		table.add(new Table.Row<String>(Arrays.asList("E1", "E2")));
+		
+		System.out.println(table);
+		System.out.println(table.rows());
+		System.out.println(table.rowAt(0));
+		System.out.println(table.rowAt(3));
+		System.out.println(table.rowAt(0).valueAt(0));
+	}	
 }
