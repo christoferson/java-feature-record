@@ -51,6 +51,8 @@ public class TryFeatureRecord {
 		
 		tryGenericNestedRecord();
 		
+		tryStatic();
+		
 		// See {@link Class#isRecord()} and {@link Class#getRecordComponents()} for more details.
 
 	}
@@ -150,4 +152,13 @@ public class TryFeatureRecord {
 		System.out.println(table.rowAt(3));
 		System.out.println(table.rowAt(0).valueAt(0));
 	}	
+	
+	public static void tryStatic() {
+		
+		PointStatic point = PointStatic.ZERO;
+		
+		System.out.println(point.x());
+		System.out.println(point.y());
+		System.out.println(point);
+	}
 }
