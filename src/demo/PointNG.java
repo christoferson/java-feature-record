@@ -11,13 +11,20 @@ public record PointNG(int x, int y) {
 //public abstract record PointNG(int x, int y) { // Illegal modifier for the record PointNG; only public, final and strictfp are permitted
 	
 // The fields derived from the record components are final. This restriction embodies an immutable by default policy that is widely applicable for data-carrier classes.	
-	public void modify() {
+	//public void modify() {
 		//this.x = this.x + 10; // The final field PointNG.x cannot be assigned
-	}
+	//}
 	
 // A record class cannot explicitly declare instance fields, 
 // Cannot contain instance initializers.R These restrictions ensure that the record header alone defines the state of a record value.	
 
 	// private int z; // User declared non-static fields z are not permitted in a record
 	// { System.out.println(this.x); } // Instance Initializer is not allowed in a record declaration
+	
+	
+	//NG: A record class cannot specify a superclass since that would mean inherited state, beyond the state described in the header. 
+	//public record PointNG(int x, int y) extends AbstractPoint { // Syntax error on token "extends", implements expected
+	
+	
+	
 }
