@@ -53,6 +53,8 @@ public class TryFeatureRecord {
 		
 		tryStatic();
 		
+		tryRecordImplementsComparable();
+		
 		// See {@link Class#isRecord()} and {@link Class#getRecordComponents()} for more details.
 
 	}
@@ -161,4 +163,13 @@ public class TryFeatureRecord {
 		System.out.println(point.y());
 		System.out.println(point);
 	}
+	
+	public static void tryRecordImplementsComparable() {
+		PointComparable point1 = new PointComparable(34, 23);
+		PointComparable point2 = new PointComparable(34, 23);
+		PointComparable point3 = new PointComparable(34, 24);
+		System.out.println(point1.compareTo(point2));
+		System.out.println(point2.compareTo(point3));
+	}
+	
 }
