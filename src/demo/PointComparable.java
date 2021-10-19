@@ -2,6 +2,7 @@ package demo;
 
 import java.util.Comparator;
 
+// A record class can implement interfaces. 
 public record PointComparable(int x, int y) implements Comparable<PointComparable> {
 
 	@Override
