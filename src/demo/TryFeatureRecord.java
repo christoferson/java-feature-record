@@ -2,8 +2,9 @@ package demo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+
+import demo.PointOuter.PontNested;
 
 // https://openjdk.java.net/jeps/395
 // Goals
@@ -54,6 +55,8 @@ public class TryFeatureRecord {
 		tryStatic();
 		
 		tryRecordImplementsComparable();
+		
+		tryRecordNested();
 		
 		// See {@link Class#isRecord()} and {@link Class#getRecordComponents()} for more details.
 
@@ -170,6 +173,12 @@ public class TryFeatureRecord {
 		PointComparable point3 = new PointComparable(34, 24);
 		System.out.println(point1.compareTo(point2));
 		System.out.println(point2.compareTo(point3));
+	}
+	
+	public static void tryRecordNested() {
+		System.out.println("------- TryNestedRecord -----");
+		PontNested nested = new PontNested(5);
+		System.out.println(nested);
 	}
 	
 }
