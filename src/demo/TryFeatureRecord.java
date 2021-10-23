@@ -181,4 +181,10 @@ public class TryFeatureRecord {
 		System.out.println(nested);
 	}
 	
+	
+	public static void tryRecordWithAnnotation() {
+		
+		PointWithAnnotation point = new PointWithAnnotation(3, 8, "val");
+		System.out.println(point.description());
+	}
 }
