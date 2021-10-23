@@ -58,6 +58,8 @@ public class TryFeatureRecord {
 		
 		tryRecordNested();
 		
+		tryLocalRecord();
+		
 		// See {@link Class#isRecord()} and {@link Class#getRecordComponents()} for more details.
 
 	}
@@ -183,8 +185,20 @@ public class TryFeatureRecord {
 	
 	
 	public static void tryRecordWithAnnotation() {
-		
+		System.out.println("------- TryRecordWithAnnotation -----");
 		PointWithAnnotation point = new PointWithAnnotation(3, 8, "val");
 		System.out.println(point.description());
 	}
+	
+	public static void tryLocalRecord() {
+		System.out.println("------- TryLocalRecord -----");
+		record PointLocal(int x, int y) { }
+		List<PointLocal> points = new ArrayList<>();
+		for (int i = 0; i < 3; i++) {
+			var point = new PointLocal(i, i*2);
+			points.add(point);
+		}
+		System.out.println(points);
+	}
+	
 }
