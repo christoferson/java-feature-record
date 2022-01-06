@@ -2,7 +2,9 @@ package demo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import demo.PointOuter.PontNested;
 
@@ -61,6 +63,8 @@ public class TryFeatureRecord {
 		tryLocalRecord();
 		
 		tryEquals();
+		
+		tryHash();
 		
 		// See {@link Class#isRecord()} and {@link Class#getRecordComponents()} for more details.
 
@@ -211,5 +215,21 @@ public class TryFeatureRecord {
 		System.out.println("point1.equals(point2): " + point1.equals(point2));
 		System.out.println("point1.equals(point3): " + point1.equals(point3));
 	}
-	
+
+	private static void tryHash() {
+		System.out.println("------- TryHash -----");
+		Point point1 = new Point(35, 26);
+		Point point2 = new Point(35, 26);
+
+		System.out.println("point1.hashCode(): " + point1.hashCode());
+		System.out.println("point2.hashCode(): " + point2.hashCode());
+
+		Set<Point> set = new HashSet<>();
+		set.add(point1);
+		set.add(point2);
+
+		System.out.println("set: " + set);
+		System.out.println("set.contains(point1): " + set.contains(point1));
+		System.out.println("set.contains(point2): " + set.contains(point2));
+	}
 }
