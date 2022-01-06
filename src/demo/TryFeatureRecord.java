@@ -60,6 +60,8 @@ public class TryFeatureRecord {
 		
 		tryLocalRecord();
 		
+		tryEquals();
+		
 		// See {@link Class#isRecord()} and {@link Class#getRecordComponents()} for more details.
 
 	}
@@ -199,6 +201,15 @@ public class TryFeatureRecord {
 			points.add(point);
 		}
 		System.out.println(points);
+	}
+	
+	private static void tryEquals() {
+		System.out.println("------- TryEquals -----");
+		Point point1 = new Point(35, 26);
+		Point point2 = new Point(35, 26);
+		Point point3 = new Point(35, 27);
+		System.out.println("point1.equals(point2): " + point1.equals(point2));
+		System.out.println("point1.equals(point3): " + point1.equals(point3));
 	}
 	
 }
