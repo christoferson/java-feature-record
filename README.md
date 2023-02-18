@@ -3,6 +3,7 @@ Demo of Java Feature Record from JDK14
 
 ## Declaration
 
+
 ```
 public record Point(int x, int y) {
 
@@ -29,31 +30,44 @@ public record Point(int x, int y) {
 }
 ```
 
+
 [Point.java](/src/demo/Point.java)
 
 
-## Restrictions on records
+## Instantiation
+
+- Records are instantiated via the new keyword. 
+
+
+## Restrictions and Limitations
 
 - Records cannot extend any other class
 
-- cannot declare instance fields other than the private final fields which correspond to components of the state description
+- Records cannot declare instance fields other than the private final fields which correspond to components of the state description
 
-- Any other fields which are declared must be static.
+- Any other fields which are declared in a Record must be static.
 
 - Records are implicitly final, and cannot be abstract. 
 
 - The components of a record are implicitly final. 
 
 
-- can be declared top level or nested, they can be generic, they can implement interfaces, and they are instantiated via the new keyword. 
+## Notes
 
-- may declare static methods, static fields, static initializers, constructors, instance methods, and nested types. 
-
-- The record, and the individual components in a state description, may be annotated.
+- Records can be declared top level or nested
 
 - If a record is nested, then it is implicitly static; this avoids an immediately enclosing instance which would silently add state to the record.
+
+- Records can be generic
+
+- Records can implement interfaces
+
+- Records may declare static methods, static fields, static initializers, constructors, instance methods, and nested types. 
+
+- The record, and the individual components in a state description, may be annotated.
 
 
 ## Explicitly declaring members of a record
 
 - Any of the members that are automatically derived from the state description can also be declared explicitly.
+
